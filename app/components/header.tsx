@@ -6,11 +6,11 @@ import Image from 'next/image';
 export const AcmeLogo = () => {
 	return (
 		<Image
-			src='/logo.png'
+			src='/b.png'
 			alt='Logo'
 			width={0}
 			height={0}
-			className='w-[200px] sm:w-[160px] max-w-none'
+			className='w-[50px] sm:w-[50px] max-w-none'
 		/>
 	)
 }
@@ -18,13 +18,13 @@ export const AcmeLogo = () => {
 
 export default function Header() {
   const navItems = [
-    {href: "/", label: "recipes"},
-    {href: "/ingredients", label: "ingredients"},
-    {href: "/about", label: "About us"}
+    {href: "/", label: "Раздел 1"},
+    {href: "/page2", label: "Раздел 2"},
+    {href: "/about", label: "О нас"}
   ];
 
 return (
-		<Navbar className='h-[6rem]'>
+		<Navbar className='h-[6rem] bg-[#FF7B00]'>
 			<NavbarBrand>
 				<a href='/'>
 					<AcmeLogo />
