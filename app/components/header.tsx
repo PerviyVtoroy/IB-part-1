@@ -15,6 +15,8 @@ export const AcmeLogo = () => {
 	)
 }
 
+const [isRegistrationOpen, setIsRegistrationOpen] = useState(false); 
+const [isLoginOpen, setIsLoginOpen] = useState(false);
 
 export default function Header() {
   const navItems = [
@@ -42,9 +44,38 @@ return (
 								{item.label}
 							</Link>
 						</NavbarItem>
+						  <Button 
+						    as={Link} 
+						    onPress={() => setIsLoginOpen(true)} // Открывает LoginModal
+						    className="bg-red-200 hover:bg-red-800 hover:text-red-200"
+						  >
+						    Log In
+						  </Button>
+							</NavbarItem>
+						<NavbarItem>
+						  <Button 
+						    as={Link} 
+						    onPress={() => setIsRegistrationOpen(true)} // Открывает RegistrationModal
+						    className="bg-red-800 hover:bg-red-200 hover:text-"
+						  >
+						    Sign Up
+						  </Button>
+						</NavbarItem>
 					)
 				})}
 			</NavbarContent>
+		
+
+		<RegistrationModal 
+  			isOpen={isRegistrationOpen} 
+ 			onClose={() => setIsRegistrationOpen(false)} 
+		/> [cite: 53]
+		<LoginModal 
+  			isOpen={isLoginOpen} 
+  			onClose={() => setIsLoginOpen(false)} 
+		/> [cite: 53]
+
+
 		</Navbar>
 	)
 }
